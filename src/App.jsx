@@ -1,11 +1,16 @@
+import { Router, Routes } from "react-router-dom"
 
 
 function App() {
 
   return (
-    <section className="bg-black text-white h-screen">
-      Dashboard
-    </section>
+    <>
+      <Router>
+        <Routes>
+          
+        </Routes>
+      </Router>
+    </>
   )
 }
 
