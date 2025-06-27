@@ -68,10 +68,10 @@
 
 export const LoginPage = () => {
     return (
-        <main className="w-full relative">
+        <main className="w-screen min-h-screen relative overflow-hidden">
             <img className="w-full h-screen" src="/bg.jpg" alt="" />
             {/*  */}
-            <section className="absolute top-[30%] left-[40%] w-[600px] h-[450px]">
+            <section className="absolute top-[30%] left-[10%] mx-5 w-full h-[450px] md:w-[600px] md:top-[30%] md:left-[20%] lg:left-[40%]">
                 <form class=" bg-white w-[70%] h-full flex flex-col justify-center rounded-3xl p-10 space-y-6">
                     {/* <!-- Username Field --> */}
                     <div>
