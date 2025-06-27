@@ -3,6 +3,7 @@ import DashboardPage from "./pages/dashboard"
 import { LoginPage } from "./pages/login"
 import { Navbar } from "./components/navbar"
 import { useState } from "react"
+import { Sidebar } from "./components/sidebar"
 
 
 function App() {
@@ -11,18 +12,27 @@ function App() {
   console.log(location.pathname)
   return (
     <>
-      {
-        location.pathname === "/login" || location.pathname === "/signup" ? (
-          <></>
-        ) : (
-          <Navbar />
-        )
-      }
-      <div className="">
-        <Routes>
-          <Route path="/" element={<DashboardPage />} />
-          <Route path="/login" element={<LoginPage />} />
-        </Routes>
+      <div className="flex">
+        {
+          location.pathname === "/login" || location.pathname === "/signup" ? (
+            <></>
+          ) : (
+            <Sidebar />
+          )
+        }
+        <div className="">
+          {
+            location.pathname === "/login" || location.pathname === "/signup" ? (
+              <></>
+            ) : (
+              <Navbar />
+            )
+          }
+          <Routes>
+            <Route path="/" element={<DashboardPage />} />
+            <Route path="/login" element={<LoginPage />} />
+          </Routes>
+        </div>
       </div>
     </>
   )
