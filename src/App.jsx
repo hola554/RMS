@@ -18,10 +18,12 @@ function App() {
           <Navbar />
         )
       }
-      <Routes>
-        <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
+      <div className="">
+        <Routes>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </div>
     </>
   )
 }
