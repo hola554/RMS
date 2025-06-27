@@ -20,7 +20,10 @@ export const Sidebar = () => {
             {/* Sidebar navigation */}
             {
                 dashboardNavItems.map((navItems, i) => (
-                    <div className={`flex items-center gap-2 my-5 ${pathname === navItems.link ? "bg-lightBlue" : ""} py-2 px-3 rounded-lg capitalize`} key={i}>
+                    <div 
+                        className={`flex items-center gap-2 my-5 ${pathname === navItems.link ? "bg-lightBlue" : ""} 
+                            py-2 px-3 rounded-lg capitalize transition-all duration-500 hover:bg-lightBlue`} 
+                        key={i}>
                         <i>
                             {navItems.icon}
                         </i>
