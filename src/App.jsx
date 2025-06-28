@@ -20,7 +20,7 @@ function App() {
             <Sidebar />
           )
         }
-        <div className="">
+        <div className="w-full">
           {
             location.pathname === "/login" || location.pathname === "/signup" ? (
               <></>

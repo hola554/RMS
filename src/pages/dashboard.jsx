@@ -5,7 +5,7 @@ const DashboardPage = () => {
     return (
         <>
             <main className="">
-                
+                dashboard
             </main>
         </>
     )
