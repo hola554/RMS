@@ -1,4 +1,5 @@
 import { DashboardCards } from "../components/dashboard/dashboardCards";
+import { DashboardPerfomance } from "../components/dashboard/dashboardPerfomance";
 import { DashboardReports } from "../components/dashboard/dashboardReports";
 
 const DashboardPage = () => {
@@ -8,8 +9,9 @@ const DashboardPage = () => {
         {/* card section */}
         <DashboardCards />
         {/* Middle Section */}
-        <section className="mt-5 flex">
+        <section className="mt-5 flex gap-4">
           <DashboardReports />
+          <DashboardPerfomance />
         </section>
       </main>
     </>
