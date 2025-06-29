@@ -5,6 +5,7 @@ import { Navbar } from "./components/navbar"
 import { useState } from "react"
 import { Sidebar } from "./components/sidebar"
 import { AccountManagement } from "./pages/superadmin/accountManagement"
+import { StudentsRecord } from "./pages/studentsRecord"
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path="/" element={<DashboardPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/manageaccount" element={<AccountManagement />} />
+            <Route path="/studentRecord" element={<StudentsRecord/>} />
           </Routes>
         </div>
       </div>
