@@ -15,17 +15,17 @@ export const dashboardNavItems = [
     {
         name: "manage users",
         icon: <ManageUsersIcon />,
-        link: "",
+        link: "/manageaccount",
     },
     {
         name: "student record",
         icon: <GroupIcon />,
-        link: "",
+        link: "studentRecord",
     },
     {
         name: "curriculum",
         icon: <CurriculumIcon />,
-        link: "",
+        link: "curriculum",
     },
     {
         name: "result",
