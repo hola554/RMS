@@ -2,58 +2,57 @@
 import { Chart } from "chart.js/auto";
 import { useEffect, useRef } from "react";
 
-export const DashboardReports = () => {
-  const chartRef1 = useRef(null);
+const DoughnutChart = ({ labels, data, backgroundColors }) => {
+  const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
-  // First chart
-  const firstChartLabel = ["Staffs", "Students", "Course"];
-
   useEffect(() => {
-    if (!chartRef1.current) return;
+    // Ensure the canvas element exists
+    if (!chartRef.current) return;
 
-    const ctx = chartRef1.current.getContext("2d");
+    // Get the 2D rendering context
+    const ctx = chartRef.current.getContext("2d");
     if (!ctx) return;
 
-    // Clear any previous chart
-    const existingChart = Chart.getChart(chartRef1.current);
-    if (existingChart) {
-      existingChart.destroy();
+    // Destroy any existing chart instance to prevent memory leaks and re-rendering issues
+    if (chartInstance.current) {
+      chartInstance.current.destroy();
     }
 
+    // Create a new Chart.js instance
     chartInstance.current = new Chart(ctx, {
-      type: "doughnut",
+      type: "doughnut", // Chart type is doughnut
       data: {
-        labels: firstChartLabel,
+        labels: labels, // Labels for the segments
         datasets: [
           {
-            data: [300, 50, 100],
-            backgroundColor: ["#6f3bff", "#ff584c", "#0f52ff"],
-            borderAlign: "center",
-            borderColor: "transparent",
-            weight: 0.25,
-            hoverOffset: 4,
+            data: data, // Data values for each segment
+            backgroundColor: backgroundColors, // Background colors for each segment
+            borderAlign: "center", // Align borders to the center of the arc
+            borderColor: "transparent", // Transparent border for a cleaner look
+            weight: 0.25, // Weight of the dataset
+            hoverOffset: 4, // Offset when hovering over a segment
           },
         ],
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: "70%",
+        responsive: true, // Make the chart responsive to container size
+        maintainAspectRatio: false, // Do not maintain aspect ratio, allowing flexible sizing
+        cutout: "70%", // Size of the inner cutout (doughnut hole)
         animation: {
-          animateScale: true,
-          animateRotate: true,
+          animateScale: true, // Animate the scale of the chart on load
+          animateRotate: true, // Animate the rotation of the chart on load
         },
         plugins: {
           legend: {
-            position: "right",
+            position: "right", // Position the legend on the right side
             labels: {
-              boxWidth: 10,
-              padding: 10,
-              usePointStyle: true,
-              pointStyle: 'circle',
+              boxWidth: 10, // Width of the color box in the legend
+              padding: 10, // Padding between legend items
+              usePointStyle: true, // Use point style (circle) for legend items
+              pointStyle: "circle", // Set the point style to circle
               font: {
-                size: 12, // Font size of legend text
+                size: 12, // Font size for legend labels
               },
             },
           },
@@ -61,22 +60,42 @@ export const DashboardReports = () => {
       },
     });
 
-    // Cleanup function
+    // Cleanup function: destroy the chart instance when the component unmounts
     return () => {
       if (chartInstance.current) {
         chartInstance.current.destroy();
         chartInstance.current = null;
       }
     };
-  }, []);
+  }, [labels, data, backgroundColors]); // Re-run effect if these props change
 
   return (
-    <section className="flex gap-4">
+    <div className="h-full w-full flex items-center justify-center">
+      <canvas ref={chartRef}></canvas>
+    </div>
+  );
+};
+
+export const DashboardReports = () => {
+ 
+  const firstChartLabel = ["Staffs", "Students", "Course"];
+  const firstChartData = [300, 50, 100];
+  const firstChartColors = ["#6f3bff", "#ff584c", "#0f52ff"];
+
+  const secondChartLabel = ["Staffs", "Students", "Course"];
+  const secondChartData = [300, 0, 0];
+  const secondChartColors = ["#6f3bff", "#ff584c", "#0f52ff"];
+  return (
+    <section className="flex gap-4 my-5">
       {/* First report */}
       <div className="bg-white rounded-lg shadow-md h-[300px] p-4 flex-1 min-w-[300px]">
         <h2 className="text-lg font-semibold mb-4">Sales Report</h2>
         <div className="h-[calc(100%-2rem)] w-full">
-          <canvas ref={chartRef1} id="chart1" height="300" width="400"></canvas>
+          <DoughnutChart
+            labels={firstChartLabel}
+            data={firstChartData}
+            backgroundColors={firstChartColors}
+          />
         </div>
       </div>
 
@@ -84,7 +103,11 @@ export const DashboardReports = () => {
       <div className="bg-white rounded-lg shadow-md h-[300px] p-4 flex-1 min-w-[300px]">
         <h2 className="text-lg font-semibold mb-4">Performance Metrics</h2>
         <div className="h-[calc(100%-2rem)]">
-          <p className="text-gray-500">Chart coming soon</p>
+          <DoughnutChart
+            labels={secondChartLabel}
+            data={secondChartData}
+            backgroundColors={secondChartColors}
+          />
         </div>
       </div>
     </section>
