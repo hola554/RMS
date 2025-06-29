@@ -4,6 +4,7 @@ import { LoginPage } from "./pages/login"
 import { Navbar } from "./components/navbar"
 import { useState } from "react"
 import { Sidebar } from "./components/sidebar"
+import { AccountManagement } from "./pages/superadmin/accountManagement"
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Routes>
             <Route path="/" element={<DashboardPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/manageaccount" element={<AccountManagement />} />
           </Routes>
         </div>
       </div>
