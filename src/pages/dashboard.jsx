@@ -9,7 +9,7 @@ const DashboardPage = () => {
         {/* card section */}
         <DashboardCards />
         {/* Middle Section */}
-        <section className="mt-5 flex gap-4">
+        <section className="my-5 flex gap-4">
           <DashboardReports />
           <DashboardPerfomance />
         </section>

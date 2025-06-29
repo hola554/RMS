@@ -86,7 +86,7 @@ export const DashboardReports = () => {
   const secondChartData = [300, 0, 0];
   const secondChartColors = ["#6f3bff", "#ff584c", "#0f52ff"];
   return (
-    <section className="flex gap-4 my-5">
+    <section className="flex gap-4">
       {/* First report */}
       <div className="bg-white rounded-lg shadow-md h-[300px] p-4 flex-1 min-w-[300px]">
         <h2 className="text-lg font-semibold mb-4">Sales Report</h2>
