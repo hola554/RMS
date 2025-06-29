@@ -184,4 +184,4 @@ export const Curriculum = () => {
             /> */}
         </div>
     );
-};g
+};
