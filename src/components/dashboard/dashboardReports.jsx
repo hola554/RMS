@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react"
 export const DashboardReports = () => {
     const chartRef1 = useRef(null);
 
-    useEffect()
+    // useEffect()
     return (
-        <section className="flex gap-4 w-[50%]">
+        <section className="flex gap-4">
             {/* First report */}
             <div className="bg-white rounded-lg shadow-md h-[300px] p-4 flex-1 min-w-[300px]">
                 <h2 className="text-lg font-semibold mb-4">Sales Report</h2>
