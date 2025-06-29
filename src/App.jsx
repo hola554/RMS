@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Sidebar } from "./components/sidebar"
 import { AccountManagement } from "./pages/superadmin/accountManagement"
 import { StudentsRecord } from "./pages/studentsRecord"
+import { Curriculum } from "./pages/curriculum"
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/manageaccount" element={<AccountManagement />} />
             <Route path="/studentRecord" element={<StudentsRecord/>} />
+            <Route path="/curriculum" element={<Curriculum/>} />
           </Routes>
         </div>
       </div>
