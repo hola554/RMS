@@ -10,7 +10,7 @@ export const Curriculum = () => {
 
 
     useEffect(() => {
-        const dummyData = Array.from({ length: 1 }, (_, i) => ({
+        const dummyData = Array.from({ length: 50 }, (_, i) => ({
             id: i + 1,
             courseCode: 'INS 201',
             courseTitle: 'Introduction to Information System',
@@ -33,7 +33,7 @@ export const Curriculum = () => {
 
 
     return (
-        <div className="flex h-screen bg-gray-100">
+        <div className="flex bg-gray-100">
             {/* Main Content Area */}
             <div className={`flex-1 p-8 transition-all duration-300`}>
                 {/* Header */}
