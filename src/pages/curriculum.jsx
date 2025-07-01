@@ -10,7 +10,7 @@ export const Curriculum = () => {
 
 
     useEffect(() => {
-        const dummyData = Array.from({ length: 50 }, (_, i) => ({
+        const dummyData = Array.from({ length: 1 }, (_, i) => ({
             id: i + 1,
             courseCode: 'INS 201',
             courseTitle: 'Introduction to Information System',
@@ -23,7 +23,7 @@ export const Curriculum = () => {
     const filteredCourses = courses.filter(course =>
         (course.courseCode.toLowerCase().includes(searchTerm.toLowerCase()) ||
          course.courseTitle.toLowerCase().includes(searchTerm.toLowerCase())) &&
-        (selectedLevel === 'All' || course.courseCode.includes(selectedLevel)) // Simplified: assuming level is part of courseCode like 'INS 201' for '200' level
+        (selectedLevel === 'All' || course.courseCode.slice(-3, -2) + '00' === selectedLevel)
     );
 
     const indexOfLastCourse = currentPage * coursesPerPage;
@@ -105,7 +105,7 @@ export const Curriculum = () => {
                                 {currentCourses.map(course => (
                                     <tr key={course.id} className='hover:bg-gray-100 cursor-pointer'>
                                         <td className="px-6 py-4 whitespace-nowrap">
-                                            <input type="checkbox" className="form-checkbox" />
+                                            <input type="checkbox" />
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{course.courseCode}</td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{course.courseTitle}</td>
