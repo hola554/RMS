@@ -44,7 +44,7 @@ export const StudentsRecord = () => {
                 </div>
               </div>
             </div>
-            <div className="md:col-span-1 flex items-center justify-center">
+            <div className="md:col-span-1 flex justify-center">
                 <div className="w-40 h-40 bg-gray-200 rounded-md flex items-center justify-center">
                     <svg className="h-16 w-16 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
