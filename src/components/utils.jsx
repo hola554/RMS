@@ -20,12 +20,12 @@ export const dashboardNavItems = [
     {
         name: "student record",
         icon: <GroupIcon />,
-        link: "studentRecord",
+        link: "/studentRecord",
     },
     {
         name: "curriculum",
         icon: <CurriculumIcon />,
-        link: "curriculum",
+        link: "/curriculum",
     },
     {
         name: "result",
